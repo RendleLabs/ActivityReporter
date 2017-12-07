@@ -10,10 +10,10 @@ namespace ActivityReport.TestApp
     {
         public static async Task Main(string[] args)
         {
-            var directory = args.FirstOrDefault() ?? Environment.CurrentDirectory;
+            var directory = "ComplexData";
             var activities = await Activities(directory);
             var report = new HtmlReport(activities);
-            using (var writer = File.CreateText("activityreport.html"))
+            using (var writer = File.CreateText("complex.html"))
             {
                 await report.Write(writer);
             }

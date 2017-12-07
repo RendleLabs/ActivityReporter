@@ -1,31 +1,159 @@
+$p0l0: #7986AC;
+$p0l1: #50608F;
+$p0l2: #2F4073;
+$p0l3: #162656;
+$p0l4: #061339;
+
+$p1l0: #F8A6AC;
+$p1l1: #CF676F;
+$p1l2: #A6373F;
+$p1l3: #7C151D;
+$p1l4: #530006;
+
+$p2l0: #97D38D;
+$p2l1: #64B058;
+$p2l2: #3C8D2F;
+$p2l3: #1E6912;
+$p2l4: #0A4600;
+
+$p3l0: #FFE4AA;
+$p3l1: #D4B36A;
+$p3l2: #AA8639;
+$p3l3: #805E15;
+$p3l4: #553A00;
+
 .palette-0 {
-    .level-0 { background-color: #7986AC; }
-    .level-1 { background-color: #50608F; }
-    .level-2 { background-color: #2F4073; }
-    .level-3 { background-color: #162656; }
-    .level-4 { background-color: #061339; }
+    color: white;
+    &.level-0, &.level-5 {
+        background-color: $p0l0;
+        &:hover {
+            background-color: darken($color: $p0l0, $amount: 10%);
+        }
+    }
+    &.level-1, &.level-6 {
+        background-color: $p0l1;
+        &:hover {
+            background-color: darken($color: $p0l1, $amount: 10%);
+        }
+    }
+    &.level-2, &.level-7 {
+        background-color: $p0l2;
+        &:hover {
+            background-color: darken($color: $p0l2, $amount: 10%);
+        }
+    }
+    &.level-3, &.level-8 {
+        background-color: $p0l3;
+        &:hover {
+            background-color: darken($color: $p0l3, $amount: 10%);
+        }
+    }
+    &.level-4, &.level-9 {
+        background-color: $p0l4;
+        &:hover {
+            background-color: darken($color: $p0l4, $amount: 10%);
+        }
+    }
 }
 
 .palette-1 {
-    .level-0 { background-color: #F8A6AC; }
-    .level-1 { background-color: #CF676F; }
-    .level-2 { background-color: #A6373F; }
-    .level-3 { background-color: #7C151D; }
-    .level-4 { background-color: #530006; }
+    color: white;
+    &.level-0 {
+        background-color: $p1l0;
+        &:hover {
+            background-color: darken($color: $p1l0, $amount: 10%);
+        }
+    }
+    &.level-1 {
+        background-color: $p1l1;
+        &:hover {
+            background-color: darken($color: $p1l1, $amount: 10%);
+        }
+    }
+    &.level-2 {
+        background-color: $p1l2;
+        &:hover {
+            background-color: darken($color: $p1l2, $amount: 10%);
+        }
+    }
+    &.level-3 {
+        background-color: $p1l3;
+        &:hover {
+            background-color: darken($color: $p1l3, $amount: 10%);
+        }
+    }
+    &.level-4 {
+        background-color: $p1l4;
+        &:hover {
+            background-color: darken($color: $p1l4, $amount: 10%);
+        }
+    }
 }
 
 .palette-2 {
-    .level-0 { background-color: #97D38D; }
-    .level-1 { background-color: #64B058; }
-    .level-2 { background-color: #3C8D2F; }
-    .level-3 { background-color: #1E6912; }
-    .level-4 { background-color: #0A4600; }
+    color: white;
+    &.level-0 {
+        background-color: $p2l0;
+        &:hover {
+            background-color: darken($color: $p2l0, $amount: 10%);
+        }
+    }
+    &.level-1 {
+        background-color: $p2l1;
+        &:hover {
+            background-color: darken($color: $p2l1, $amount: 10%);
+        }
+    }
+    &.level-2 {
+        background-color: $p2l2;
+        &:hover {
+            background-color: darken($color: $p2l2, $amount: 10%);
+        }
+    }
+    &.level-3 {
+        background-color: $p2l3;
+        &:hover {
+            background-color: darken($color: $p2l3, $amount: 10%);
+        }
+    }
+    &.level-4 {
+        background-color: $p2l4;
+        &:hover {
+            background-color: darken($color: $p2l4, $amount: 10%);
+        }
+    }
 }
 
 .palette-3 {
-    .level-0 { background-color: #FFE4AA; }
-    .level-1 { background-color: #D4B36A; }
-    .level-2 { background-color: #AA8639; }
-    .level-3 { background-color: #805E15; }
-    .level-4 { background-color: #553A00; }
+    color: white;
+    &.level-0 {
+        background-color: $p3l0;
+        &:hover {
+            background-color: darken($color: $p3l0, $amount: 10%);
+        }
+    }
+    &.level-1 {
+        background-color: $p3l1;
+        &:hover {
+            background-color: darken($color: $p3l1, $amount: 10%);
+        }
+    }
+    &.level-2 {
+        background-color: $p3l2;
+        &:hover {
+            background-color: darken($color: $p3l2, $amount: 10%);
+        }
+    }
+    &.level-3 {
+        background-color: $p3l3;
+        &:hover {
+            background-color: darken($color: $p3l3, $amount: 10%);
+        }
+    }
+    &.level-4 {
+        background-color: $p3l4;
+        &:hover {
+            background-color: darken($color: $p3l4, $amount: 10%);
+        }
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using ActivityReport.Html;
 
 namespace ActivityReport
 {
@@ -24,8 +25,8 @@ namespace ActivityReport
         {
             await writer.WriteLineAsync(@"<!DOCTYPE html><html><head>");
             await writer.WriteLineAsync(@"<style>");
-            await writer.WriteLineAsync(HtmlTemplate.Css);
-            await writer.WriteLineAsync(HtmlTemplate.Palette);
+            await writer.WriteLineAsync(Layout.Css);
+            await writer.WriteLineAsync(Palette.Css);
             await writer.WriteLineAsync(@"</style></head>");
             await writer.WriteLineAsync(@"<body>");
             await writer.WriteLineAsync(@"<div class=""root"">");
@@ -36,9 +37,7 @@ namespace ActivityReport
             }
 
             await writer.WriteLineAsync(@"</div>");
-            await writer.WriteLineAsync(@"<script>");
-            await writer.WriteLineAsync(HtmlTemplate.Js);
-            await writer.WriteLineAsync(@"</script>");
+            await writer.WriteLineAsync(Script.Js);
             await writer.WriteLineAsync(@"</body>");
             await writer.WriteLineAsync(@"</html>");
         }

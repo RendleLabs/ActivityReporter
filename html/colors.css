@@ -1,81 +1,177 @@
-.palette-0 .level-0 {
+.palette-0 {
+  color: white;
+}
+
+.palette-0.level-0, .palette-0.level-5 {
   background-color: #7986AC;
 }
 
-.palette-0 .level-1 {
+.palette-0.level-0:hover, .palette-0.level-5:hover {
+  background-color: #5d6b95;
+}
+
+.palette-0.level-1, .palette-0.level-6 {
   background-color: #50608F;
 }
 
-.palette-0 .level-2 {
+.palette-0.level-1:hover, .palette-0.level-6:hover {
+  background-color: #3e4a6e;
+}
+
+.palette-0.level-2, .palette-0.level-7 {
   background-color: #2F4073;
 }
 
-.palette-0 .level-3 {
+.palette-0.level-2:hover, .palette-0.level-7:hover {
+  background-color: #202c4f;
+}
+
+.palette-0.level-3, .palette-0.level-8 {
   background-color: #162656;
 }
 
-.palette-0 .level-4 {
+.palette-0.level-3:hover, .palette-0.level-8:hover {
+  background-color: #0c142d;
+}
+
+.palette-0.level-4, .palette-0.level-9 {
   background-color: #061339;
 }
 
-.palette-1 .level-0 {
+.palette-0.level-4:hover, .palette-0.level-9:hover {
+  background-color: #01040b;
+}
+
+.palette-1 {
+  color: white;
+}
+
+.palette-1.level-0 {
   background-color: #F8A6AC;
 }
 
-.palette-1 .level-1 {
+.palette-1.level-0:hover {
+  background-color: #f47780;
+}
+
+.palette-1.level-1 {
   background-color: #CF676F;
 }
 
-.palette-1 .level-2 {
+.palette-1.level-1:hover {
+  background-color: #c3404a;
+}
+
+.palette-1.level-2 {
   background-color: #A6373F;
 }
 
-.palette-1 .level-3 {
+.palette-1.level-2:hover {
+  background-color: #802a30;
+}
+
+.palette-1.level-3 {
   background-color: #7C151D;
 }
 
-.palette-1 .level-4 {
+.palette-1.level-3:hover {
+  background-color: #500e13;
+}
+
+.palette-1.level-4 {
   background-color: #530006;
 }
 
-.palette-2 .level-0 {
+.palette-1.level-4:hover {
+  background-color: #200002;
+}
+
+.palette-2 {
+  color: white;
+}
+
+.palette-2.level-0 {
   background-color: #97D38D;
 }
 
-.palette-2 .level-1 {
+.palette-2.level-0:hover {
+  background-color: #75c568;
+}
+
+.palette-2.level-1 {
   background-color: #64B058;
 }
 
-.palette-2 .level-2 {
+.palette-2.level-1:hover {
+  background-color: #4f9144;
+}
+
+.palette-2.level-2 {
   background-color: #3C8D2F;
 }
 
-.palette-2 .level-3 {
+.palette-2.level-2:hover {
+  background-color: #2c6722;
+}
+
+.palette-2.level-3 {
   background-color: #1E6912;
 }
 
-.palette-2 .level-4 {
+.palette-2.level-3:hover {
+  background-color: #123d0b;
+}
+
+.palette-2.level-4 {
   background-color: #0A4600;
 }
 
-.palette-3 .level-0 {
+.palette-2.level-4:hover {
+  background-color: #031300;
+}
+
+.palette-3 {
+  color: white;
+}
+
+.palette-3.level-0 {
   background-color: #FFE4AA;
 }
 
-.palette-3 .level-1 {
+.palette-3.level-0:hover {
+  background-color: #ffd477;
+}
+
+.palette-3.level-1 {
   background-color: #D4B36A;
 }
 
-.palette-3 .level-2 {
+.palette-3.level-1:hover {
+  background-color: #c99f42;
+}
+
+.palette-3.level-2 {
   background-color: #AA8639;
 }
 
-.palette-3 .level-3 {
+.palette-3.level-2:hover {
+  background-color: #84682c;
+}
+
+.palette-3.level-3 {
   background-color: #805E15;
 }
 
-.palette-3 .level-4 {
+.palette-3.level-3:hover {
+  background-color: #543e0e;
+}
+
+.palette-3.level-4 {
   background-color: #553A00;
+}
+
+.palette-3.level-4:hover {
+  background-color: #221700;
 }
  
 

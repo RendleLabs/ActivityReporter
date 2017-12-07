@@ -13,7 +13,7 @@ namespace ActivityReport
             var directory = args.FirstOrDefault() ?? Environment.CurrentDirectory;
             var activities = await Activities(directory);
             var report = new HtmlReport(activities);
-            using (var writer = File.CreateText("activityreport.html"))
+            using (var writer = File.CreateText(Path.Combine(directory, "activityreport.html")))
             {
                 await report.Write(writer);
             }

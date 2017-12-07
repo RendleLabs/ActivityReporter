@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Version>1.1.0.0</Version>
+    <AssemblyName>actrep.exe</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />

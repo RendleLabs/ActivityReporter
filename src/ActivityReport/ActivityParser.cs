@@ -10,7 +10,7 @@ namespace ActivityReport
 {
     public class ActivityParser
     {
-        private readonly List<Entry> _nonActivityEntries = new List<Entry>();
+        private readonly List<DiagnosticSourceEvent> _nonActivityEntries = new List<DiagnosticSourceEvent>();
         private readonly ConcurrentDictionary<string, Activity> _activities = new ConcurrentDictionary<string, Activity>();
         
         [PublicAPI]
@@ -19,7 +19,7 @@ namespace ActivityReport
         [PublicAPI]
         public void AddXml(XElement xml)
         {
-            var entry = new Entry
+            var entry = new DiagnosticSourceEvent
             {
                 Source = xml.Attribute("source")?.Value,
                 Key = xml.Attribute("key")?.Value,
@@ -39,11 +39,21 @@ namespace ActivityReport
                 ParentId = xml.Attribute("parentId")?.Value,
                 Operation = xml.Attribute("operation")?.Value,
                 Source = xml.Attribute("source")?.Value,
-                StartTime = ParseDateTimeOffset(xml.Attribute("startTime")?.Value),
-                Duration = ParseMilliseconds(xml.Attribute("duration")?.Value)
+                StartTime = ParseDateTimeOffset(xml.Attribute("startTime")?.Value)
             });
+
+            activity.Duration = Max(activity.Duration, ParseMilliseconds(xml.Attribute("duration")?.Value));
             
             activity.Entries.Add(entry);
+
+            var tags = xml.Element("tags");
+            if (tags != null)
+            {
+                foreach (var tag in tags.Elements("tag"))
+                {
+                    activity.AddTag(tag.Attribute("key")?.Value, tag.Attribute("value")?.Value);
+                }
+            }
 
             UpdateNesting(activity);
         }
@@ -80,5 +90,7 @@ namespace ActivityReport
                 ? date
                 : default;
         }
+
+        private static TimeSpan Max(TimeSpan a, TimeSpan b) => a > b ? a : b;
     }
 }

@@ -20,20 +20,23 @@ namespace ActivityReport
         {
             var (leftMargin, rightMargin) = Margins(activity);
             var level = CountLevel(activity.Parent);
-            await writer.WriteLineAsync($@"<div class=""split palette-{index % 4} level-{level}{
-                    (collapsed ? " collapsed" : string.Empty)
-                }""
-                          style=""margin-left:{CssPercent(leftMargin)};margin-right:{CssPercent(rightMargin)}"">
-                          <div class=""split-label""><button class=""toggle-button subs-{
-                    activity.Children.Count
-                }"">&gt;</button><span title=""{Title(activity)}"">{activity.Operation}</span></div>
-                          <div class=""spacer"" title=""{Title(activity)}"">{
-                    activity.Duration.TotalMilliseconds
-                :N}ms</div>");
+            await writer.WriteAsync($@"<div class=""split palette-{index % 4} level-{level}");
+            if (collapsed)
+            {
+                await writer.WriteAsync(" collapsed");
+            }
+
+            await writer.WriteLineAsync($@""" style=""margin-left:{CssPercent(leftMargin)};margin-right:{CssPercent(rightMargin)}"">");
+            await writer.WriteLineAsync(@"<div class=""split-label"">");
+            await writer.WriteLineAsync($@"<button class=""toggle-button subs-{activity.Children.Count}"">&gt;</button>");
+            await writer.WriteLineAsync($@"<span title=""{Title(activity)}"">{activity.Operation}</span>");
+            await writer.WriteLineAsync("</div>");
+            await writer.WriteLineAsync($@"<div class=""spacer"" title=""{Title(activity)}"">{activity.Duration.TotalMilliseconds:N}ms</div>");
+            
             if (activity.Children.Any())
             {
                 await writer.WriteLineAsync(@"<div class=""sub"">");
-                foreach (var child in activity.Children)
+                foreach (var child in activity.Children.OrderBy(a => a.StartTime))
                 {
                     await Write(writer, child, true, index);
                 }
@@ -42,6 +45,10 @@ namespace ActivityReport
             }
 
             await writer.WriteLineAsync("</div>");
+            if (level == 0)
+            {
+                await writer.WriteLineAsync("<hr>");
+            }
         }
 
         private static string CssPercent(double value) => value < double.Epsilon ? "0" : $"{value}%";
