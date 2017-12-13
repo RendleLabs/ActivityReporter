@@ -1,7 +1,9 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Microsoft.Extensions.DependencyModel;
 using Xunit;
 
 namespace RendleLabs.Diagnostics.DiagnosticSourceExtensions.Tests
@@ -25,12 +27,14 @@ namespace RendleLabs.Diagnostics.DiagnosticSourceExtensions.Tests
 
     public static class TupleAbuse
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Dispose(this (IDisposable a, IDisposable b) disposeables)
         {
             SafeDispose(disposeables.a);
             SafeDispose(disposeables.b);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void SafeDispose(IDisposable d)
         {
             try
